@@ -1604,13 +1604,18 @@ estadisticas.append({
 
 #Sacar estaciones que le falten un dato:
 
-def delete_station_with_null_data(estadisticas):
-	for key, value in estadisticas.copy().items():
-		if type(value) is dict:
-			delete_station_with_null_data(value)
-		if value == None:
-			del estadisticas[key]
-	return estadisticas
+def delete_station_with_null_data(p_diccionarios):
+    # recorre la lista de diccionarios
+    for diccionario in p_diccionarios:
+		# recorre una copia del diccionario para evitar errores de modificacion del tamaño mientras se itera el bucle (RuntimeError: dictionary changed size during iteration)
+		# puede que sea poco eficiente
+        for clave, valor in diccionario.copy().items():
+            if type(valor) is dict:
+                delete_station_with_null_data([valor])
+            if valor is None:
+                del diccionario[clave]
+
+    return p_diccionarios
 
 delete_station_with_null_data(estadisticas)
 
