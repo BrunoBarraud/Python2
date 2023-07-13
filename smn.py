@@ -1697,7 +1697,45 @@ print(delete_station_with_null_data(estadisticas))
 # n = 5
 # print("Factorial de " + str(n) + " es " + str(factorial(n)))
 
-#Mi vieja en 4
+# Crear una lista de diccionarios
+personas = [
+    {
+        'nombre': 'Mi vieja',
+        'edad': 45,
+        'profesion': 'Abogada',
+        'pasatiempos': ['Leer', 'Cocinar'],
+        'personalidad': 'Amable y trabajadora'
+    },
+    {
+        'nombre': 'La vieja del Marquitos',
+        'edad': 50,
+        'profesion': 'Maestra',
+        'pasatiempos': ['Jardinería', 'Pintar'],
+        'personalidad': 'Creativa y cariñosa'
+    },
+    {
+        'nombre': 'La vieja del Juan Cruz',
+        'edad': 55,
+        'profesion': 'Contadora',
+        'pasatiempos': ['Bailar', 'Viajar'],
+        'personalidad': 'Energética y extrovertida'
+    },
+    {
+        'nombre': 'Mi hermana',
+        'edad': 20,
+        'profesion': 'Estudiante',
+        'pasatiempos': ['Deporte', 'Tocar guitarra'],
+        'personalidad': 'Alegre y curiosa',
+    }
+]
+ # Acceder a los datos de cada persona
+for persona in personas:
+    print(f"Nombre: {persona['nombre']}")
+    print(f"Edad: {persona['edad']}")
+    print(f"Profesión: {persona['profesion']}")
+    print(f"Pasatiempos: {', '.join(persona['pasatiempos'])}")
+    print(f"Personalidad: {persona['personalidad']}")
+    print()
 
 
 
