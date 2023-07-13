@@ -1606,7 +1606,7 @@ estadisticas.append({
 
 def delete_station_with_null_data(p_diccionarios):
     # recorre la lista de diccionarios
-    for diccionario in p_diccionarios:
+    for diccionario in p_diccionarios: 
 		# recorre una copia del diccionario para evitar errores de modificacion del tamaño mientras se itera el bucle (RuntimeError: dictionary changed size during iteration)
 		# puede que sea poco eficiente
         for clave, valor in diccionario.copy().items():
@@ -1617,37 +1617,34 @@ def delete_station_with_null_data(p_diccionarios):
 
     return p_diccionarios
 
-delete_station_with_null_data(estadisticas)
-
-
-
-# for i in estadisticas:
-# 	print("")
-# 	print("Estación: " + i['Estación'])
-# 	print("")
-# 	print("Temperatura (°C): " + str(i['Temperatura (°C)']))
-# 	print("")
-# 	print("Temperatura máxima (°C): " + str(i['Temperatura máxima (°C)']))
-# 	print("")
-# 	print("Temperatura mínima (°C): " + str(i['Temperatura mínima (°C)']))
-# 	print("")
-# 	print("Humedad relativa (%): " + str(i['Humedad relativa (%)']))
-# 	print("")
-# 	print("Velocidad del Viento (km/h): " + str(i['Velocidad del Viento (km/h)']))
-# 	print("")
-# 	print("Nubosidad total (octavos): " + str(i['Nubosidad total (octavos)']))
-# 	print("")
-# 	print("Precipitación (mm): " + str(i['Precipitación (mm)']))
-# 	print("")
-# 	print("Frecuencia de días con Precipitación superior a 0.1 mm: " + str(i['Frecuencia de días con Precipitación superior a 0.1 mm']))
-# 	print("")
 
 
 
 
+for i in estadisticas:
+	print("")
+	print("Estación: " + i['Estación'])
+	print("")
+	print("Temperatura (°C): " + str(i['Temperatura (°C)']))
+	print("")
+	print("Temperatura máxima (°C): " + str(i['Temperatura máxima (°C)']))
+	print("")
+	print("Temperatura mínima (°C): " + str(i['Temperatura mínima (°C)']))
+	print("")
+	print("Humedad relativa (%): " + str(i['Humedad relativa (%)']))
+	print("")
+	print("Velocidad del Viento (km/h): " + str(i['Velocidad del Viento (km/h)']))
+	print("")
+	print("Nubosidad total (octavos): " + str(i['Nubosidad total (octavos)']))
+	print("")
+	print("Precipitación (mm): " + str(i['Precipitación (mm)']))
+	print("")
+	print("Frecuencia de días con Precipitación superior a 0.1 mm: " + str(i['Frecuencia de días con Precipitación superior a 0.1 mm']))
+	print("")
 
-
-
+print("")
+print("Imprime estaciones que no tienen datos nulos")
+print(delete_station_with_null_data(estadisticas))
 
 
 
