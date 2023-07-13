@@ -1700,6 +1700,10 @@ delete_station_with_null_data(estadisticas)
 # n = 5
 # print("Factorial de " + str(n) + " es " + str(factorial(n)))
 
+#Mi vieja en 4
+
+
+
 
 
 
