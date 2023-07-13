@@ -1604,45 +1604,47 @@ estadisticas.append({
 
 #Sacar estaciones que le falten un dato:
 
-def delete_station_with_null_data(estadisticas):
-	for key, value in estadisticas.copy().items():
-		if type(value) is dict:
-			delete_station_with_null_data(value)
-		if value == None:
-			del estadisticas[key]
-	return estadisticas
+def delete_station_with_null_data(p_diccionarios):
+    # recorre la lista de diccionarios
+    for diccionario in p_diccionarios: 
+		# recorre una copia del diccionario para evitar errores de modificacion del tamaño mientras se itera el bucle (RuntimeError: dictionary changed size during iteration)
+		# puede que sea poco eficiente
+        for clave, valor in diccionario.copy().items():
+            if type(valor) is dict:
+                delete_station_with_null_data([valor])
+            if valor is None:
+                del diccionario[clave]
 
-delete_station_with_null_data(estadisticas)
-
-
-
-# for i in estadisticas:
-# 	print("")
-# 	print("Estación: " + i['Estación'])
-# 	print("")
-# 	print("Temperatura (°C): " + str(i['Temperatura (°C)']))
-# 	print("")
-# 	print("Temperatura máxima (°C): " + str(i['Temperatura máxima (°C)']))
-# 	print("")
-# 	print("Temperatura mínima (°C): " + str(i['Temperatura mínima (°C)']))
-# 	print("")
-# 	print("Humedad relativa (%): " + str(i['Humedad relativa (%)']))
-# 	print("")
-# 	print("Velocidad del Viento (km/h): " + str(i['Velocidad del Viento (km/h)']))
-# 	print("")
-# 	print("Nubosidad total (octavos): " + str(i['Nubosidad total (octavos)']))
-# 	print("")
-# 	print("Precipitación (mm): " + str(i['Precipitación (mm)']))
-# 	print("")
-# 	print("Frecuencia de días con Precipitación superior a 0.1 mm: " + str(i['Frecuencia de días con Precipitación superior a 0.1 mm']))
-# 	print("")
+    return p_diccionarios
 
 
 
 
 
+for i in estadisticas:
+	print("")
+	print("Estación: " + i['Estación'])
+	print("")
+	print("Temperatura (°C): " + str(i['Temperatura (°C)']))
+	print("")
+	print("Temperatura máxima (°C): " + str(i['Temperatura máxima (°C)']))
+	print("")
+	print("Temperatura mínima (°C): " + str(i['Temperatura mínima (°C)']))
+	print("")
+	print("Humedad relativa (%): " + str(i['Humedad relativa (%)']))
+	print("")
+	print("Velocidad del Viento (km/h): " + str(i['Velocidad del Viento (km/h)']))
+	print("")
+	print("Nubosidad total (octavos): " + str(i['Nubosidad total (octavos)']))
+	print("")
+	print("Precipitación (mm): " + str(i['Precipitación (mm)']))
+	print("")
+	print("Frecuencia de días con Precipitación superior a 0.1 mm: " + str(i['Frecuencia de días con Precipitación superior a 0.1 mm']))
+	print("")
 
-
+print("")
+print("Imprime estaciones que no tienen datos nulos")
+print(delete_station_with_null_data(estadisticas))
 
 
 
@@ -1694,6 +1696,48 @@ delete_station_with_null_data(estadisticas)
 	
 # n = 5
 # print("Factorial de " + str(n) + " es " + str(factorial(n)))
+
+# Crear una lista de diccionarios
+personas = [
+    {
+        'nombre': 'Mi vieja',
+        'edad': 45,
+        'profesion': 'Abogada',
+        'pasatiempos': ['Leer', 'Cocinar'],
+        'personalidad': 'Amable y trabajadora'
+    },
+    {
+        'nombre': 'La vieja del Marquitos',
+        'edad': 50,
+        'profesion': 'Maestra',
+        'pasatiempos': ['Jardinería', 'Pintar'],
+        'personalidad': 'Creativa y cariñosa'
+    },
+    {
+        'nombre': 'La vieja del Juan Cruz',
+        'edad': 55,
+        'profesion': 'Contadora',
+        'pasatiempos': ['Bailar', 'Viajar'],
+        'personalidad': 'Energética y extrovertida'
+    },
+    {
+        'nombre': 'Mi hermana',
+        'edad': 20,
+        'profesion': 'Estudiante',
+        'pasatiempos': ['Deporte', 'Tocar guitarra'],
+        'personalidad': 'Alegre y curiosa',
+    }
+]
+ # Acceder a los datos de cada persona
+for persona in personas:
+    print(f"Nombre: {persona['nombre']}")
+    print(f"Edad: {persona['edad']}")
+    print(f"Profesión: {persona['profesion']}")
+    print(f"Pasatiempos: {', '.join(persona['pasatiempos'])}")
+    print(f"Personalidad: {persona['personalidad']}")
+    print()
+
+
 
 
 
