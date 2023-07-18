@@ -353,7 +353,7 @@ rand = random.randint(0, len(fifa_rank) - 1)
 pais1 = fifa_rank[rand]['pais']
 puntos1 = fifa_rank[rand]['puntos']
 
-probabilidad = puntos1 / 10000
+probabilidad = puntos1 / 1000
 probabilidad = probabilidad * 100
 probabilidad = round(probabilidad, 2)
 probabilidad = str(probabilidad)
@@ -388,45 +388,8 @@ print(f"El ganador es: {ganador(puntos_1, puntos_2)}")
 print("Probabilidad de ganar el partido: " + str(probabilidad) + "%")
 print("Puntos: " + str(puntos_ganados))
 
-"""
-
-$rand = rand(0, count($fifa_rank) - 1);
-$pais1 = $fifa_rank[$rand]['pais'];
-$puntos1 = $fifa_rank[$rand]['puntos'];
-
-//calculo de probabilidad
-$probabilidad = $puntos1 / 1000;
-$probabilidad = $probabilidad * 100;
-$probabilidad = round($probabilidad, 2);
-$probabilidad = $probabilidad . '%';
-
-//calculo de puntos ganados por el equipo 1
-$puntos_ganados = $puntos1 / 2;
-$puntos_ganados = round($puntos_ganados, 2);
-
-//resultado del partido
-$rand = rand(0, count($resultado) - 1);
-$pais1 = $resultado[$rand]['pais1'];
-$puntos_1 = $resultado[$rand]['puntos1'];
-$pais2 = $resultado[$rand]['pais2'];
-$puntos_2 = $resultado[$rand]['puntos2'];
+ #Imprimir los países y sus puntos
+for equipo in fifa_rank:
+    print(f"País: {equipo['pais'].split(equipo['pais'][-3:])[-2]}\tPuntos: {equipo['puntos']}")
 
 
-//ganador del partido
-$ganador = '';
-if ($puntos_1 > $puntos_2) {
-	$ganador = $pais1;
-} else {
-	$ganador = $pais2;
-}
-
-echo $pais1 . ' ' . $puntos_1 . ' vs ' . $pais2 . ' ' . $puntos_2. "\n";
-echo "El ganador es: " . $ganador . "\n";
-echo "Probabilidad de ganar el partido: " . $probabilidad. "\n";
-echo "Puntos: " . $puntos_ganados. "\n";
-
-"""
-
-# Imprimir los países y sus puntos
-# for equipo in fifa_rank:
-#     print(f"País: {equipo['pais'].split(equipo['pais'][-3:])[-2]}\tPuntos: {equipo['puntos']}")

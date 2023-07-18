@@ -117,6 +117,10 @@ def postorden(n):
     print(n.valor)
 
 print(postorden(raiz))
+print(preorden(raiz))
+print(inorden(raiz))
+
+
 
 
 
