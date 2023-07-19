@@ -1,5 +1,5 @@
 """
-1) Recorrer el arbol e imprimir en orden ascendente (creo), sin modificar el arbol ni utilizar un metodo de ordenación
+1) Recorrer el arbol e imprimir en orden ascendente, sin modificar el arbol ni utilizar un metodo de ordenación
 2) Hacer una funcion que reciba como parámetro un nombre para buscar y que devuelva el objeto o, en caso de que no esté un None
 3) Hacer una lista de los objetos y ordenar los nombres utilizando el metodo de burbuja
 
@@ -50,7 +50,7 @@ buscar_nombre(raiz, buscar)
 
 
 
-listaa = [raiz, raiz.left, raiz.left.left, raiz.left.left.left, raiz.left.right, raiz.right, raiz.right.left, raiz.right.right, raiz.right.right.right]
+lista = [raiz, raiz.left, raiz.left.left, raiz.left.left.left, raiz.left.right, raiz.right, raiz.right.left, raiz.right.right, raiz.right.right.right]
 
 def ordenar_burbuja(lista):
     for i in range(len(lista)-1):
@@ -62,7 +62,7 @@ def ordenar_burbuja(lista):
     return lista
 
 def imprimir_lista_ordenada():
-    for i in ordenar_burbuja(listaa):
+    for i in ordenar_burbuja(lista):
         print(str(i.id) + ': ' + i.name)
 
 imprimir_lista_ordenada()
